@@ -1,7 +1,7 @@
 'use strict';
 
-let build = require('../lib/build.js');
-let watch = require('node-watch');
+var build = require('../lib/build.js');
+var watch = require('node-watch');
 const taskName = 'wfmTemplate';
 
 module.exports = function(grunt) {
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 };
 
 function getAndCheckModuleName(task, grunt, taskConfig) {
-  let moduleName = grunt.option('module') || task.data.module || taskConfig.module;
+  var moduleName = grunt.option('module') || task.data.module || taskConfig.module;
   grunt.log.debug("--module=" + moduleName);
   if (!moduleName) {
     usage(grunt, task.name);
@@ -40,7 +40,7 @@ function getAndCheckModuleName(task, grunt, taskConfig) {
 };
 
 function getAndCheckOutputDir(task, grunt, taskConfig) {
-  let outputDir = grunt.option('outputDir') || task.data.outputDir || taskConfig.outputDir;
+  var outputDir = grunt.option('outputDir') || task.data.outputDir || taskConfig.outputDir;
   grunt.log.debug("--outputDir=" + outputDir);
   if (!outputDir) {
     outputDir = "dist";
